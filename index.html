@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Helena</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #fdfdfd; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        #home { text-align: center; cursor: pointer; transition: 0.5s; }
+        .heart {
+            font-size: 80px;
+            color: #ff4d4d;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.3));
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+        #mensagem { 
+            display: none; 
+            text-align: center; 
+            padding: 30px;
+            max-width: 400px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        h1 { color: #333; font-weight: 300; line-height: 1.6; font-size: 1.5rem; }
+        .smile { display: block; margin-top: 20px; color: #ff4d4d; font-size: 30px; }
+        p.tip { color: #bbb; margin-top: 15px; font-size: 0.7rem; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <div id="home" onclick="mostrarMensagem()">
+        <div class="heart">❤️</div>
+        <p class="tip">CLIQUE NO CORAÇÃO</p>
+    </div>
+
+    <div id="mensagem">
+        <h1>Site feito especialmente para a <strong>Helena</strong>, espero que tenha gostado.</h1>
+        <span class="smile">:)</span>
+    </div>
+
+    <script>
+        function mostrarMensagem() {
+            document.getElementById('home').style.display = 'none';
+            const msg = document.getElementById('mensagem');
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.opacity = '1'; }, 50);
+        }
+    </script>
+</body>
+</html>
